@@ -1,5 +1,5 @@
 <script setup>
-import BatleFieldVue from "../components/modalBatle/BatleField.vue";
+import BatleField from "../components/modalBatle/BatleField.vue";
 import { useBattles } from "../stores/storeBattles"
 const store = useBattles();
 import { ref, computed } from "vue";
@@ -28,16 +28,16 @@ getchamp();
 <template>
   <section class="flex flex-col relative ">
 
-    <BatleFieldVue />
+    <BatleField />
 
     <h1 class="text-center text-gray-200 text-[3.8rem] ">Duelistas</h1>
 
     <input type="text" placeholder="Procurar herói..." v-model="inputText" class="w-96 p-2 rounded-md ml-4" />
 
-    <main class="grid xl:grid-cols-10 md:grid-cols-4 sm:grid-cols-2 overflow-y-scroll w-full min-h-screen p-4 gap-2">
+    <main class="grid xl:grid-cols-8 md:grid-cols-4 sm:grid-cols-2  w-full min-h-screen p-4 gap-2">
 
       <div v-for="item in filteredItems" :key="item.id"
-        class=" border-[0.1rem] border-white shadow-md h-80 shadow-gray-300 hover:opacity-90 transition duration-300 justify-center flex flex-col items-center p-2 rounded-md bg-black hover:bg-gray-500 cursor-pointer"
+        class=" border-[0.1rem] border-white shadow-md h-80 w-full  shadow-gray-300 hover:opacity-90 transition duration-300 justify-center flex flex-col items-center p-2 rounded-md bg-black hover:bg-gray-500 cursor-pointer"
         @click="store.increment(item)">
 
         <h1 class="text-gray-200 font-bold text-center">{{ item.name }}</h1>

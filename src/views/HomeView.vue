@@ -1,5 +1,5 @@
 <script setup>
-import BatleField from "../components/modalBatle/BatleField.vue";
+import Batlefield from "../components/modalBatle/Batlefield.vue";
 import { useBattles } from "../stores/storeBattles"
 const store = useBattles();
 import { ref, computed } from "vue";
@@ -28,7 +28,7 @@ getchamp();
 <template>
   <section class="flex flex-col relative ">
 
-    <BatleField />
+    <Batlefield />
 
     <h1 class="text-center text-gray-200 text-[3.8rem] ">Duelistas</h1>
 

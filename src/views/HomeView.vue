@@ -2,7 +2,7 @@
 import Batlefield from "../components/modalBatle/Batlefield.vue";
 import { useBattles } from "../stores/storeBattles"
 const store = useBattles();
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import axios from "axios";
 const champ = ref();
 const datachamp = ref([])
@@ -22,7 +22,10 @@ const filteredItems = computed(() => {
   }
   return champ.value;
 })
-getchamp();
+onMounted(()=>{
+  getchamp();
+})
+
 </script>
 
 <template>
